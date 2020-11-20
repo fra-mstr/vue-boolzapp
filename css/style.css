@@ -160,7 +160,6 @@ body {
 .contact-list li {
   display: block;
   border-bottom: 1px solid #EAEAEA;
-  border: 1px solid fuchsia;
   padding: 5px 0px;
   display: flex;
   align-items: flex-start;
