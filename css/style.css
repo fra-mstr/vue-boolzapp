@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  background-image:
+    linear-gradient(
+    to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%);
+  font: 'Roboto', sans-serif;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  border: 2px solid black;
+  height: 95vh;
+  width: 90%;
+  display: flex;
+}
+
+.left-container,
+.right-container {
+  border: 2px solid violet;
+  height: 100%;
+}
+.left-container {
+  width: 40%;
+}
+.right-container {
+  width: 60%;
+}
+
+/* Left Container */
+
+.left-container .left-header {
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #EAEAEA;
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+}
+
+.user-box img {
+  width: 10%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.bold-text {
+  font-weight: bold;
+  color: black;
+}
+
+.icons-box {
+  justify-content: flex-end;
+  align-items: center;
+  width: 35%;
+}
+
+.icons-box ul {
+  text-decoration: none;
+}
+.icons-box ul > li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.icons-box ul > li i {
+  color: grey;
+  cursor: pointer;
+}
+
+.notifications-bar {
+  background-color: #8EDAFC;
+  padding: 15px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.notifications-bar .bell-square {
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #F2FBFF;
+  margin-right: 20px;
+}
+.notifications-bar .bell-square i {
+  color: #8EDAFC;
+  font-size: 18px;
+}
+
+.notifications-msg {
+  display: inline-block;
+}
+
+.notif-activation {
+  text-decoration: underline;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: grey;
+  margin-top: 5px;
+}
+
+.search-box {
+  padding: 8px;
+  background-color: #EAEAEA;
+}
+
+.search-box .search-bar {
+  background-color: white;
+  padding: 8px 10px;
+}
+
+.search-bar > div {
+  display: inline-block;
+}
+.search-bar i {
+  color: grey;
+}
+
+.search-input-box {
+  margin-left: 20px;
+  width: 80%;
+}
+
+.search-input-box > input {
+  border: none;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.contacts {
+  height: 79%;
+  background: white;
+}
+
+.contacts .contact-list {
+  background: white;
+}
+
+.contact-list ul {
+  list-style: none;
+  padding: 15px 10px;
+}
+.contact-list li {
+  display: block;
+  border-bottom: 1px solid #EAEAEA;
+  border: 1px solid fuchsia;
+  padding: 5px 0px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-list li > img {
+  width: 15%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
