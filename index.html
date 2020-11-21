@@ -20,7 +20,7 @@
     <!-- JS Frameworks -->
 
     <!-- Vue 2.x (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -29,7 +29,9 @@
 
   <body>
 
-    <div id="#boolzapp" class="app-container">
+    <div id="root">
+
+      <!-- Left Container -->
       <div class="left-container">
         <div class="left-header">
           <div class="user-box">
@@ -72,7 +74,6 @@
               <div class="search-input-box">
                 <input
                   type="text"
-                  v-model="searchInput"
                   placeholder="Cerca o inizia una nuova chat">
               </div>
             </div>
@@ -80,9 +81,10 @@
           <div class="contact-list">
             <ul>
               <li
-                v-for:"item in contactList">
-                <img v-bind:src="contactList.avatar" alt="">
-                <span>{{ contactList.name }}</span>
+                v-for="item in contactArr"
+                class="bold-text">
+                <img v-bind:src="item.avatar" alt="">
+                <span>{{item.name}}</span>
               </li>
 
             </ul>
@@ -97,15 +99,41 @@
           </div>
         </div>
       </div>
+
+      <!-- Right Container -->
       <div class="right-container">
         <div class="right-header">
-          header
+          <div class="avatar-box">
+            <img v-bind:src="contactArr[0].avatar" alt="">
+            <div class="avatar-msg">
+              <div class="bold-text">
+                {{contactArr[0].name}}
+              </div>
+              <div class="last-access-notif">
+                Ultimo accesso alle {{contactArr[0].lastAccess}}
+              </div>
+            </div>
+          </div>
+          <div class="right-icons-box">
+            <ul>
+              <li><i class="fas fa-search"></i></li>
+              <li><i class="fas fa-paperclip"></i></li>
+              <li><i class="fas fa-ellipsis-v"></i></li>
+            </ul>
+          </div>
         </div>
         <div class="chat-window">
-          chat
+
         </div>
         <div class="right-footer">
-          footer
+          <div><i class="far fa-smile"></i></div>
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="Scrivi un messaggio"
+              value="">
+          </div>
+          <div><i class="fas fa-microphone"></i></div>
         </div>
       </div>
     </div>
