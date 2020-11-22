@@ -29,7 +29,7 @@ const myApp = new Vue ({
   computed: {
     searchContacts: function(){
       return this.contactArr.filter ((element) => {
-        return element.name.toLowerCase() === this.searchInput.toLowerCase();
+        return element.name.toLowerCase().includes(this.searchInput.toLowerCase());
       })
     },
   }
