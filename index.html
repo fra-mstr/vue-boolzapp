@@ -52,6 +52,8 @@
             </ul>
           </div>
         </div>
+
+        <!-- Notifications -->
         <div class="notifications-bar">
           <div class="bell-square">
             <i class="fas fa-bell-slash"></i>
@@ -65,6 +67,8 @@
             </div>
           </div>
         </div>
+
+        <!-- Search Bar -->
         <div class="contacts">
           <div class="search-box">
             <div class="search-bar">
@@ -74,14 +78,17 @@
               <div class="search-input-box">
                 <input
                   type="text"
-                  placeholder="Cerca o inizia una nuova chat">
+                  placeholder="Cerca o inizia una nuova chat"
+                  v-model='searchInput'>
               </div>
             </div>
           </div>
+
+          <!-- Chat list -->
           <div class="contact-list">
             <ul>
               <li
-                v-for="item in contactArr"
+                v-for="item in searchContacts"
                 class="bold-text">
                 <img v-bind:src="item.avatar" alt="">
                 <span>{{item.name}}</span>
@@ -122,9 +129,13 @@
             </ul>
           </div>
         </div>
+
+        <!-- Chat Window -->
         <div class="chat-window">
 
         </div>
+
+        <!-- Chat Text Input -->
         <div class="right-footer">
           <div><i class="far fa-smile"></i></div>
           <div class="input-box">

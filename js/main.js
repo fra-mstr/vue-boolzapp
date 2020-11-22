@@ -1,6 +1,8 @@
 const myApp = new Vue ({
   el: '#root',
   data: {
+    searchInput: '',
+    textInput: '',
     contactArr: [
       {
         'name': 'Michele',
@@ -22,6 +24,13 @@ const myApp = new Vue ({
         'avatar': 'img/avatar_4.jpg',
         'lastAccess': '21.28'
       }
-    ]
+    ],
+  },
+  computed: {
+    searchContacts: function(){
+      return this.contactArr.filter ((element) => {
+        return element.name.toLowerCase() === this.searchInput.toLowerCase();
+      })
+    },
   }
 })
