@@ -253,7 +253,7 @@ body {
 
 /* Chat Window */
 .chat-window {
-  padding: 50px 70px;
+  padding: 50px 40px;
 }
 
 .message-list {
@@ -264,11 +264,13 @@ body {
 
 .message-box {
   display: block;
-  max-width: 40%;
+  width: 45%;
+  max-width: 48%;
   /* border: 2px solid red; */
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 8px;
+  position: relative;
 }
 
 .msg-sended {
@@ -278,4 +280,13 @@ body {
 .msg-received {
   background-color: white;
   align-self: flex-start;
+}
+
+.message-time-box {
+  color: grey;
+  font-size: 0.5rem;
+  margin-top: 5px;
+  position: absolute;
+  right: 4%;
+  bottom: 2%;
 }

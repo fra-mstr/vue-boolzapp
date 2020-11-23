@@ -134,12 +134,26 @@
         <!-- Chat Window -->
         <div class="chat-window">
           <div class="message-list">
-            <div class="message-box msg-received">
+            <div
+              v-for="element in contactArr[activeContactIndex].chatMessages"
+              :class="{ 'msg-sended': (element.emitter === 'sended'), 'msg-received': (element.emitter === 'received')  }"
+              class="message-box">
+                {{element.text}}
+                <div class="message-time-box">
+                  {{element.time}}
+                </div>
+            </div>
+
+            <!-- Messaggi di prova -->
+            <!-- <div class="message-box msg-received">
               Hai portato a spasso il cane?
+              <div class="message-time-box">
+                10/01/2020 16:15
+              </div>
             </div>
             <div class="message-box msg-sended">
               Sì tranquillo
-            </div>
+            </div> -->
           </div>
         </div>
 
