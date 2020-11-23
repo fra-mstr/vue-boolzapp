@@ -90,7 +90,8 @@
               <li
                 v-for="(item, index) in searchContacts"
                 class="bold-text"
-                @click="changeWindow(index)">
+                @click="changeWindow(index)"
+                :class="{'highlighted': (index == activeContactIndex)}">
                 <img v-bind:src="item.avatar" alt="">
                 <span>{{item.name}}</span>
               </li>
