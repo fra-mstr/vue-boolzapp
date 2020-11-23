@@ -27,6 +27,7 @@ body {
   height: 95vh;
   width: 90%;
   display: flex;
+  overflow: hidden;
 }
 
 .left-container,
@@ -248,4 +249,33 @@ body {
   font-size: 24px;
   color: grey;
   cursor: pointer;
+}
+
+/* Chat Window */
+.chat-window {
+  padding: 50px 70px;
+}
+
+.message-list {
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-box {
+  display: block;
+  max-width: 40%;
+  /* border: 2px solid red; */
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.msg-sended {
+  background-color:#D5F9BA;
+  align-self: flex-end;
+}
+.msg-received {
+  background-color: white;
+  align-self: flex-start;
 }

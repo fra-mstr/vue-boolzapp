@@ -88,8 +88,9 @@
           <div class="contact-list">
             <ul>
               <li
-                v-for="item in searchContacts"
-                class="bold-text">
+                v-for="(item, index) in searchContacts"
+                class="bold-text"
+                @click="changeWindow(index)">
                 <img v-bind:src="item.avatar" alt="">
                 <span>{{item.name}}</span>
               </li>
@@ -111,13 +112,13 @@
       <div class="right-container">
         <div class="right-header">
           <div class="avatar-box">
-            <img v-bind:src="contactArr[0].avatar" alt="">
+            <img v-bind:src="contactArr[activeContactIndex].avatar" alt="">
             <div class="avatar-msg">
               <div class="bold-text">
-                {{contactArr[0].name}}
+                {{contactArr[activeContactIndex].name}}
               </div>
               <div class="last-access-notif">
-                Ultimo accesso alle {{contactArr[0].lastAccess}}
+                Ultimo accesso alle {{contactArr[activeContactIndex].lastAccess}}
               </div>
             </div>
           </div>
@@ -132,7 +133,14 @@
 
         <!-- Chat Window -->
         <div class="chat-window">
-
+          <div class="message-list">
+            <div class="message-box msg-received">
+              Hai portato a spasso il cane?
+            </div>
+            <div class="message-box msg-sended">
+              Sì tranquillo
+            </div>
+          </div>
         </div>
 
         <!-- Chat Text Input -->

@@ -1,8 +1,9 @@
 const myApp = new Vue ({
   el: '#root',
   data: {
-    searchInput: '',
-    textInput: '',
+    searchInput: '', // Contacts Search Bar Input
+    textInput: '', // Send New Message Input
+    activeContactIndex: 0,
     contactArr: [
       {
         'name': 'Michele',
@@ -21,10 +22,15 @@ const myApp = new Vue ({
       },
       {
         'name': 'Luisa',
-        'avatar': 'img/avatar_4.jpg',
+        'avatar': 'img/avatar_io.jpg',
         'lastAccess': '21.28'
       }
     ],
+  },
+  methods: {
+    changeWindow: function(index){
+      this.activeContactIndex = index;
+    },
   },
   computed: {
     searchContacts: function(){
