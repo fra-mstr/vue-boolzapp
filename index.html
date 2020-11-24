@@ -56,14 +56,16 @@
         <!-- Notifications -->
         <div class="notifications-bar">
           <div class="bell-square">
-            <i class="fas fa-bell-slash"></i>
+            <i
+              :class="notificationStatus.icon">
+            </i>
           </div>
           <div class="notifications-msg">
             <div class="bold-text">
               Ricevi notifiche di nuovi messaggi
             </div>
             <div class="notif-activation">
-              Attiva notifiche desktop
+              {{notificationStatus.message}}
             </div>
           </div>
         </div>
@@ -137,7 +139,7 @@
           <div class="message-list">
             <div
               v-for="element in contactArr[activeContactIndex].chatMessages"
-              :class="{ 'msg-sended': (element.emitter === 'sended'), 'msg-received': (element.emitter === 'received')  }"
+              :class="{ 'msg-sent': (element.emitter === 'sent'), 'msg-received': (element.emitter === 'received')  }"
               class="message-box">
                 {{element.text}}
                 <div class="message-time-box">
@@ -152,7 +154,7 @@
                 10/01/2020 16:15
               </div>
             </div>
-            <div class="message-box msg-sended">
+            <div class="message-box msg-sent">
               Sì tranquillo
             </div> -->
           </div>
@@ -166,7 +168,8 @@
               type="text"
               placeholder="Scrivi un messaggio"
               value=""
-              v-model="textInput">
+              v-model="textInput"
+              @keypress.enter="sendMessage">
           </div>
           <div><i class="fas fa-microphone"></i></div>
         </div>

@@ -3,6 +3,10 @@ const myApp = new Vue ({
   data: {
     searchInput: '', // Contacts Search Bar Input
     textInput: '', // Send New Message Input
+    notificationStatus: {
+      'icon': 'fas fa-bell-slash',
+      'message': 'Attiva notifiche desktop'
+    },
     activeContactIndex: 0,
     contactArr: [
       {
@@ -12,12 +16,12 @@ const myApp = new Vue ({
         'chatMessages': [
           {
             'text': 'Hai portato a spasso il cane?',
-            'emitter': 'sended',
+            'emitter': 'sent',
             'time': '15:30'
           },
           {
             'text': 'Ricordati di dargli da mangiare',
-            'emitter': 'sended',
+            'emitter': 'sent',
             'time': '15:31'
           },
           {
@@ -39,7 +43,7 @@ const myApp = new Vue ({
           },
           {
             'text': 'Certo! Porto io le birre.',
-            'emitter': 'sended',
+            'emitter': 'sent',
             'time': '15:31'
           },
           {
@@ -56,7 +60,7 @@ const myApp = new Vue ({
         'chatMessages': [
           {
             'text': 'Oh! Ti è piaciuto il pezzo che ti ho mandato?',
-            'emitter': 'sended',
+            'emitter': 'sent',
             'time': '15:30'
           },
           {
@@ -66,7 +70,7 @@ const myApp = new Vue ({
           },
           {
             'text': 'Hai ragione. Vuoi inserirci un synth o una chitarra?',
-            'emitter': 'sended',
+            'emitter': 'sent',
             'time': '16:15'
           }
         ]
@@ -78,7 +82,7 @@ const myApp = new Vue ({
         'chatMessages': [
           {
             'text': "Allora? Come stai dopo l'operazione agli occhi?",
-            'emitter': 'sended',
+            'emitter': 'sent',
             'time': '15:30'
           },
           {
@@ -88,17 +92,43 @@ const myApp = new Vue ({
           },
           {
             'text': 'Vai tra, tanto siamo in zona rossa. Non ti perdi niente!',
-            'emitter': 'sended',
+            'emitter': 'sent',
             'time': '16:15'
           }
         ]
       }
     ],
+    randomAnswers: [
+      "Hai ragione. Ci penserò su",
+      "A che ora allora domani?",
+      "Stasera che facciamo, quindi?",
+      "Mi fa piacere",
+      "Tanto va la gatta al lardo che ci lascia lo zampino!"
+    ]
   },
   methods: {
     changeWindow: function(index){
       this.activeContactIndex = index;
     },
+    sendMessage: function(){
+      if (this.textInput !== ""){
+        this.contactArr[this.activeContactIndex].chatMessages.push({
+          'text': this.textInput,
+          'emitter': 'sent',
+          'time': '14:26',
+        });
+      }
+      this.textInput = ""; //Reset Input messaggio
+      setTimeout(this.autoAnswer, 3000);
+    },
+    autoAnswer: function(){
+      const randomArrIndex = Math.floor(Math.random() * this.randomAnswers.length);
+      this.contactArr[this.activeContactIndex].chatMessages.push({
+        'text': this.randomAnswers[randomArrIndex],
+        'emitter': 'received',
+        'time': '15:15',
+      })
+    }
   },
   computed: {
     searchContacts: function(){

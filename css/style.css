@@ -99,10 +99,13 @@ body {
 }
 
 .notifications-bar .bell-square {
+  height: 40px;
+  width: 40px;
   padding: 10px;
   border-radius: 50%;
   background-color: #F2FBFF;
   margin-right: 20px;
+  cursor: pointer;
 }
 .notifications-bar .bell-square i {
   color: #8EDAFC;
@@ -258,6 +261,7 @@ body {
 /* Chat Window */
 .chat-window {
   padding: 50px 40px;
+  overflow-y: scroll;
 }
 
 .message-list {
@@ -277,7 +281,7 @@ body {
   position: relative;
 }
 
-.msg-sended {
+.msg-sent {
   background-color:#D5F9BA;
   align-self: flex-end;
 }
