@@ -185,6 +185,11 @@ body {
   margin-right: 10px;
 }
 
+.last-msg-notif {
+  color: grey;
+  font-size: 0.7rem;
+  margin-top: 10px;
+}
 
 /* Right Container */
 .right-container .right-header {

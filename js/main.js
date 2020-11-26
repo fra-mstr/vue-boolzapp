@@ -118,8 +118,8 @@ const myApp = new Vue ({
           'time': '14:26',
         });
       }
-      this.textInput = ""; //Reset Input messaggio
-      setTimeout(this.autoAnswer, 3000);
+      this.textInput = ""; // Reset Input messaggio
+      setTimeout(this.autoAnswer, 3000); // Risposta casuale dopo 3 secondi
     },
     autoAnswer: function(){
       const randomArrIndex = Math.floor(Math.random() * this.randomAnswers.length);

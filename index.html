@@ -95,7 +95,11 @@
                 @click="changeWindow(index)"
                 :class="{'highlighted': (index == activeContactIndex)}">
                 <img v-bind:src="item.avatar" alt="">
-                <span>{{item.name}}</span>
+                <div class="">
+                  <span>{{item.name}}</span>
+                  <div class="last-msg-notif">{{item.chatMessages[item.chatMessages.length - 1].text}}</div>
+                </div>
+
               </li>
 
             </ul>
